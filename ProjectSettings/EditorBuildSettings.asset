@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_/Scenes/Maison-niveau-1.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_/Scenes/sous-sol-niveau-2.unity
+    guid: 95f12d87a5bef2747bbd3ddc49a3cd3f
+  - enabled: 1
+    path: Assets/_/Scenes/le-sanctuaire-niveau-3.unity
+    guid: 93fb0ab7d86f06641a61f44d2d7c20b7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

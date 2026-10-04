@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class SpiritBox : MonoBehaviour
 {
     public Transform player;
+    public PlayerFloor playerFloor;
 
     [Header("Detection")]
     public float detectionRange = 15f;
@@ -52,12 +53,10 @@ public class SpiritBox : MonoBehaviour
         Vector3 pressedPosition =
             buttonStartPosition + Vector3.left * pressDistance;
 
-        // Le bouton s'enfonce
         button.localPosition = pressedPosition;
 
         yield return new WaitForSeconds(pressDuration);
 
-        // Le bouton revient
         button.localPosition = buttonStartPosition;
 
         buttonAnimation = null;
@@ -73,6 +72,25 @@ public class SpiritBox : MonoBehaviour
 
         foreach (GameObject paranormalObject in paranormalObjects)
         {
+            // Récupère les informations de l'objet paranormal
+            ParanormalObject objectInfo =
+                paranormalObject.GetComponent<ParanormalObject>();
+
+            // Si l'objet n'a pas le script ParanormalObject,
+            // on l'ignore
+            if (objectInfo == null)
+            {
+                continue;
+            }
+
+            // Si l'objet n'est pas au même étage que le joueur,
+            // on l'ignore aussi
+            if (objectInfo.floor != playerFloor.currentFloor)
+            {
+                continue;
+            }
+
+            // Seulement maintenant on calcule sa distance
             float distance = Vector3.Distance(
                 player.position,
                 paranormalObject.transform.position
@@ -85,6 +103,7 @@ public class SpiritBox : MonoBehaviour
             }
         }
 
+        // Objet du BON étage trouvé dans les 15 m
         if (nearestObject != null &&
             nearestDistance <= detectionRange)
         {
@@ -99,10 +118,14 @@ public class SpiritBox : MonoBehaviour
             Debug.Log(
                 "Objet détecté : "
                 + nearestObject.name
+                + " | Étage : "
+                + playerFloor.currentFloor
                 + " | Distance : "
                 + nearestDistance
             );
         }
+
+        // Aucun objet du bon étage dans les 15 m
         else
         {
             if (spiritBoxAudio != null)
@@ -110,7 +133,10 @@ public class SpiritBox : MonoBehaviour
                 spiritBoxAudio.Play();
             }
 
-            Debug.Log("Aucune réponse.");
+            Debug.Log(
+                "Aucune réponse à l'étage "
+                + playerFloor.currentFloor
+            );
         }
     }
 }
