@@ -6,16 +6,22 @@ public class MainMenuLogic : MonoBehaviour
     public AudioSource buttonSound;
 
     public void StartButton()
+{
+    Debug.Log("NEW GAME CLIQUÉ");
+
+    if (buttonSound != null)
     {
-        Debug.Log("NEW GAME CLIQUÉ");
-
-        if (buttonSound != null)
-        {
-            buttonSound.Play();
-        }
-
-        SceneManager.LoadScene("Maison-niveau-1");
+        buttonSound.Play();
     }
+
+    // Nouvelle partie = on efface l'ancienne progression
+    if (GameProgress.Instance != null)
+    {
+        GameProgress.Instance.ResetProgress();
+    }
+
+    SceneManager.LoadScene("Maison-niveau-1");
+}
 
     public void ExitGameButton()
     {
