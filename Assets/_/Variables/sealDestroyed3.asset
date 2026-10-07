@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3ad3d94c76a74ffaae15625647ada6a, type: 3}
-  m_Name: openSecretDoor
+  m_Name: sealDestroyed3
   m_EditorClassIdentifier: ColliderEventSystem::ColliderEventSystem.BoolVariable
-  m_Id: 9455b841004044ef8e27d6126b6f7934
+  m_Id: 770fe7bb4a034e20b97e61c5e7e916fa
   Persistent: 0
   m_InitialValue: 0
