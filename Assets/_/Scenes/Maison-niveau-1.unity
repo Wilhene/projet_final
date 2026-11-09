@@ -60809,9 +60809,9 @@ MonoBehaviour:
   sonsDePas:
   - {fileID: 8300000, guid: 24c080d26320391489787f26681355a8, type: 3}
   - {fileID: 8300000, guid: c447ea72b85678d49895edc060d06866, type: 3}
-  intervalleMarche: 0.6
+  intervalleMarche: 0.7
   intervalleCourse: 0.3
-  volumePas: 0.495
+  volumePas: 0.2
   sonSaut: {fileID: 0}
   sonAtterrissage: {fileID: 0}
   sonTir: {fileID: 0}
