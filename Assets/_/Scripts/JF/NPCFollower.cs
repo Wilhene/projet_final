@@ -153,7 +153,11 @@ public class NPCFollower : MonoBehaviour
 
     private void Update()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
+        // Si le joueur existe et est actif, calcule sa distance.
+        // Sinon, considère qu'il est infiniment loin de l'entité.
+        float distance = (target != null && target.gameObject.activeInHierarchy)
+            ? Vector3.Distance(transform.position, target.position)
+            : Mathf.Infinity;
 
         // Pendant l'animation d'attaque, le PNJ reste sur place : ni déplacement, ni rotation.
         // À la fin du coup, les zones sont réévaluées : si la cible est partie, il repart aussitôt.
