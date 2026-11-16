@@ -133,10 +133,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Dust_Intensity: 10
-    - _Invert_Mask: 0
+    - _Invert_Mask: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Snow_Intensity: 1
+    - _Snow_Intensity: 0.2
     - _Texture_Triplanar_Blend: 5
     m_Colors:
     - _Texture_Size: {r: 1, g: 1, b: 1, a: 0}

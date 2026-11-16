@@ -95,13 +95,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dust_Intensity: 10
-    - _Invert_Mask: 0
+    - _Dust_Intensity: 34.94
+    - _Invert_Mask: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Texture_Triplanar_Blend: 5
     m_Colors:
-    - _Texture_Size: {r: 1, g: 1, b: 1, a: 0}
+    - _Texture_Size: {r: 0.09, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2590118100888345245
