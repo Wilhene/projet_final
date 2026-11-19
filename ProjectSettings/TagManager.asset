@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - ParanormalObject
+  - test
   layers:
   - Default
   - TransparentFX
